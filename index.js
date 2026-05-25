@@ -29,42 +29,6 @@ function go(){
     console.log('server is running');
 }
 
-/*app.post("/",(req,res)=>{ console.log('Post request received');
-    console.log(req.body);
-    
-    //Student
-
-    const student = new Student(req.body)
-
-    student.save().then(
-        ()=>{
-            res.json(
-                {
-                    message : "Student saved successfully"
-                }
-            )
-        }
-    )
-    res.json(
-        {
-            message : "Good morning "+req.body.name
-        
-        }
-    )});*/
-
-
-/*app.get("/",(req,res)=>{ console.log('Get request received');
-    Student.find().then(
-        (students)=>{
-            console.log(students)
-            res.json(students)
-
-
-        }
-    )})*/
-
-
-
 app.listen(3000, ()=>{
     console.log('Server is running on port 3000');
 });

@@ -1,7 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Student from './models/student.js';
-import studentRouter from './routes/studentRouter.js';
 import userRouter from './routes/userRouter.js';
 import e from 'express';
 import authenticateUser from './middlewares/authenticate.js';
@@ -22,7 +20,7 @@ app.use(express.json());
 app.use(authenticateUser);
 
 
-app.use("/students",studentRouter)
+
 app.use("/users",userRouter)
 app.use("/products",productRouter)
 

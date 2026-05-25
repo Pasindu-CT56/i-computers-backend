@@ -11,7 +11,11 @@ mongoose.connect(mongoUri).then(
     ()=>{
         console.log("Connected to MongoDB");
     }
-)
+).catch
+(()=>{
+    console.error("Error connecting to MongoDB");
+})    
+
 
 let app = express();
 

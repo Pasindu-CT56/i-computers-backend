@@ -4,8 +4,10 @@ import userRouter from './routes/userRouter.js';
 import e from 'express';
 import authenticateUser from './middlewares/authenticate.js';
 import productRouter from './routes/productRouter.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const mongoUri = "mongodb://admin:1234@ac-wvzmqg1-shard-00-00.2inaclv.mongodb.net:27017,ac-wvzmqg1-shard-00-01.2inaclv.mongodb.net:27017,ac-wvzmqg1-shard-00-02.2inaclv.mongodb.net:27017/?ssl=true&replicaSet=atlas-pnkshn-shard-0&authSource=admin&appName=Cluster0"
+const mongoUri = process.env.MONGO_URI;
 
 mongoose.connect(mongoUri).then(
     ()=>{

@@ -4,6 +4,7 @@ import userRouter from './routes/userRouter.js';
 import e from 'express';
 import authenticateUser from './middlewares/authenticate.js';
 import productRouter from './routes/productRouter.js';
+import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -20,6 +21,8 @@ mongoose.connect(mongoUri).then(
 
 
 let app = express();
+
+app.use(cors());
 
 app.use(express.json());
 

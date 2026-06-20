@@ -28,9 +28,9 @@ export async function createUser(req,res){
 
     }catch(error){
         console.error("Error creating user:", error);
-        return res.json({message : "Internal Server Error"})
-    }
-}
+        return res.status(500).json({message : "Internal Server Error"
+    });
+}}
 
 export async function loginUser(req,res){
     try{

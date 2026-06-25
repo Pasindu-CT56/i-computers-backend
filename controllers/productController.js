@@ -19,7 +19,7 @@ export async function createProduct(req,res){
 
     }catch(error){
         console.error("Error creating product:", error);
-        return res.json({message : "Internal Server Error"})
+        return res.status(500).json({message : "Internal Server Error"})
     }
 }
 

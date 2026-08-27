@@ -6,6 +6,7 @@ import authenticateUser from './middlewares/authenticate.js';
 import productRouter from './routes/productRouter.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import orderRouter from './routes/orderRouter.js';
 dotenv.config();
 
 const mongoUri = process.env.MONGO_URI;
@@ -32,6 +33,8 @@ app.use(authenticateUser);
 
 app.use("/users",userRouter)
 app.use("/products",productRouter)
+app.use("/orders",orderRouter)
+
 
 
 function go(){

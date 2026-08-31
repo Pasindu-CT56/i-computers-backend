@@ -1,5 +1,5 @@
 import express from 'express';
-import { createUser, loginUser } from '../controllers/userController.js';
+import { createUser, getAllUsers, getCurrentUser, loginUser, updateUserRole, updateUserStatus } from '../controllers/userController.js';
 import e from 'express';
 
 
@@ -7,5 +7,12 @@ const userRouter = express.Router();
 
 userRouter.post("/", createUser)
 userRouter.post("/login",loginUser)
+
+userRouter.get("/:pageSize/:pageNumber", getAllUsers)
+userRouter.get("/me" , getCurrentUser)
+
+
+userRouter.put("/status" , updateUserStatus)
+userRouter.put("/role" , updateUserRole)
 
 export default userRouter;

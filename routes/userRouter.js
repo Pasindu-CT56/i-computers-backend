@@ -1,5 +1,5 @@
 import express from 'express';
-import { createUser, getAllUsers, getCurrentUser, loginUser, updateUserRole, updateUserStatus } from '../controllers/userController.js';
+import { createUser, getAllUsers, getCurrentUser, loginUser, updateUserPassword, updateUserProfile, updateUserRole, updateUserStatus } from '../controllers/userController.js';
 import e from 'express';
 
 
@@ -14,5 +14,7 @@ userRouter.get("/me" , getCurrentUser)
 
 userRouter.put("/status" , updateUserStatus)
 userRouter.put("/role" , updateUserRole)
+userRouter.put("/update" , updateUserProfile)
+userRouter.put("/password" , updateUserPassword)
 
 export default userRouter;

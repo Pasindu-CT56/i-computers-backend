@@ -1,5 +1,5 @@
 import express from 'express';
-import { createUser, getAllUsers, getCurrentUser, loginUser, updateUserPassword, updateUserProfile, updateUserRole, updateUserStatus } from '../controllers/userController.js';
+import { createUser, getAllUsers, getCurrentUser, googleLogin, loginUser, updateUserPassword, updateUserProfile, updateUserRole, updateUserStatus } from '../controllers/userController.js';
 import e from 'express';
 
 
@@ -16,5 +16,7 @@ userRouter.put("/status" , updateUserStatus)
 userRouter.put("/role" , updateUserRole)
 userRouter.put("/update" , updateUserProfile)
 userRouter.put("/password" , updateUserPassword)
+
+userRouter.post("/google" , googleLogin)
 
 export default userRouter;
